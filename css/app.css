@@ -185,6 +185,18 @@ main,
   background: transparent;
 }
 
+.btn.small {
+  padding: 0.22rem 0.5rem;
+  font-size: 0.72rem;
+  border-radius: 6px;
+  line-height: 1.2;
+}
+
+.btn:disabled {
+  opacity: 0.7;
+  cursor: default;
+}
+
 .btn.text {
   background: none;
   border: 0;
@@ -529,6 +541,32 @@ main {
 
 .panel figcaption {
   margin-bottom: 0.35rem;
+}
+
+.panel figcaption:has(.chart-export) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.45rem 0.75rem;
+}
+
+.panel__copy {
+  min-width: 0;
+  flex: 1;
+}
+
+.chart-export {
+  display: flex;
+  gap: 0.3rem;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.chart-export .btn {
+  white-space: nowrap;
+  min-width: 3.5rem;
+  text-align: center;
 }
 
 .hint {

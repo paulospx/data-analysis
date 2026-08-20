@@ -523,6 +523,8 @@ function bind() {
 
   $("btn-export").addEventListener("click", exportCsv);
 
+  attachChartExports();
+
   $("data-table").querySelectorAll("th[data-sort]").forEach((th) => {
     th.addEventListener("click", () => {
       const key = th.dataset.sort;
@@ -1592,6 +1594,257 @@ function exportCsv() {
 function csv(value) {
   const s = String(value);
   return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+}
+
+function attachChartExports() {
+  document.querySelectorAll("figure.panel").forEach((panel) => {
+    if (!panel.querySelector(".chart")) return;
+    const caption = panel.querySelector("figcaption");
+    if (!caption || caption.querySelector(".chart-export")) return;
+
+    const copy = document.createElement("div");
+    copy.className = "panel__copy";
+    while (caption.firstChild) copy.append(caption.firstChild);
+
+    const tools = document.createElement("div");
+    tools.className = "chart-export";
+    tools.innerHTML =
+      '<button type="button" class="btn ghost small" data-chart-action="copy" title="Copy as PNG" aria-label="Copy chart as image">Copy</button>' +
+      '<button type="button" class="btn ghost small" data-chart-action="png" title="Download PNG" aria-label="Download chart as PNG">PNG</button>';
+    caption.append(copy, tools);
+
+    tools.addEventListener("click", (e) => {
+      const btn = e.target.closest("[data-chart-action]");
+      if (!btn) return;
+      if (btn.dataset.chartAction === "copy") copyChartPng(panel, btn);
+      else downloadChartPng(panel, btn);
+    });
+  });
+}
+
+function chartFilename(panel) {
+  const title = panel.querySelector("figcaption h2")?.textContent || "chart";
+  const slug = title
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+    .slice(0, 72);
+  return `${slug || "chart"}.png`;
+}
+
+function flashButton(btn, message) {
+  const original = btn.getAttribute("data-original-label") || btn.textContent;
+  btn.setAttribute("data-original-label", original);
+  clearTimeout(Number(btn.dataset.flashTimer));
+  btn.textContent = message;
+  const timer = setTimeout(() => {
+    btn.textContent = original;
+    btn.disabled = false;
+  }, 1600);
+  btn.dataset.flashTimer = String(timer);
+}
+
+function wrapCanvasText(ctx, text, maxWidth) {
+  const words = String(text).split(/\s+/).filter(Boolean);
+  if (!words.length) return [];
+  const lines = [];
+  let line = words[0];
+  for (let i = 1; i < words.length; i++) {
+    const next = `${line} ${words[i]}`;
+    if (ctx.measureText(next).width <= maxWidth) line = next;
+    else {
+      lines.push(line);
+      line = words[i];
+    }
+  }
+  lines.push(line);
+  return lines;
+}
+
+function loadImage(url) {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error("Could not rasterize chart"));
+    img.src = url;
+  });
+}
+
+function canvasToBlob(canvas) {
+  return new Promise((resolve, reject) => {
+    canvas.toBlob((blob) => {
+      if (!blob) reject(new Error("Could not encode PNG"));
+      else resolve(blob);
+    }, "image/png");
+  });
+}
+
+function exportSvgClone(svgEl) {
+  const vb = svgEl.viewBox.baseVal;
+  const w = Math.max(1, Math.round(vb?.width || svgEl.clientWidth || 640));
+  const h = Math.max(1, Math.round(vb?.height || svgEl.clientHeight || 240));
+  const clone = svgEl.cloneNode(true);
+  clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  clone.setAttribute("width", String(w));
+  clone.setAttribute("height", String(h));
+  const css = document.createElementNS("http://www.w3.org/2000/svg", "style");
+  css.textContent =
+    `text,.tick,.axis-label{font-family:"IBM Plex Sans","Segoe UI","Helvetica Neue",sans-serif}` +
+    `.tick,.axis-label{fill:${C.muted};font-size:11px}` +
+    `.chart-title-note{fill:${C.ink};font-size:11px}`;
+  clone.insertBefore(css, clone.firstChild);
+  const srcText = svgEl.querySelectorAll("text");
+  clone.querySelectorAll("text").forEach((node, i) => {
+    const live = srcText[i];
+    if (!live) return;
+    const cs = getComputedStyle(live);
+    if (cs.fill && cs.fill !== "none") node.setAttribute("fill", cs.fill);
+    if (cs.fontSize) node.setAttribute("font-size", cs.fontSize);
+    node.setAttribute("font-family", '"IBM Plex Sans", "Segoe UI", "Helvetica Neue", sans-serif');
+  });
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>${new XMLSerializer().serializeToString(clone)}`;
+  return { w, h, xml };
+}
+
+async function chartToPngBlob(panel) {
+  const svgEl = panel.querySelector(".chart svg");
+  if (!svgEl) throw new Error("This chart has nothing to export yet.");
+
+  const title = panel.querySelector("figcaption h2")?.textContent?.trim() || "Chart";
+  const hint = (panel.querySelector("figcaption .hint")?.textContent || "")
+    .replace(/\s*(Hover|Click)[^.]*\./gi, "")
+    .replace(/\s+/g, " ")
+    .trim();
+  const footer = [state.meta.label, state.meta.unit].filter(Boolean).join(" · ");
+
+  const { w: svgW, h: svgH, xml } = exportSvgClone(svgEl);
+  const blob = new Blob([xml], { type: "image/svg+xml;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+
+  try {
+    const img = await loadImage(url);
+    const pad = 28;
+    const scale = 2;
+    const innerW = svgW;
+    const width = innerW + pad * 2;
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+    ctx.font = "600 20px Newsreader, Georgia, serif";
+    const titleLines = wrapCanvasText(ctx, title, innerW);
+    ctx.font = '400 13px "IBM Plex Sans", "Segoe UI", sans-serif';
+    const hintLines = hint ? wrapCanvasText(ctx, hint, innerW) : [];
+    ctx.font = '400 11px "IBM Plex Sans", "Segoe UI", sans-serif';
+    const footerLines = footer ? wrapCanvasText(ctx, footer, innerW) : [];
+
+    const titleH = titleLines.length * 26;
+    const hintH = hintLines.length ? 8 + hintLines.length * 18 : 0;
+    const footerH = footerLines.length ? 16 + footerLines.length * 16 : 0;
+    const height = pad + titleH + hintH + 16 + svgH + footerH + pad;
+
+    canvas.width = Math.round(width * scale);
+    canvas.height = Math.round(height * scale);
+    ctx.setTransform(scale, 0, 0, scale, 0, 0);
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = "high";
+    ctx.fillStyle = C.card;
+    ctx.fillRect(0, 0, width, height);
+
+    let y = pad;
+    ctx.fillStyle = C.ink;
+    ctx.font = "600 20px Newsreader, Georgia, serif";
+    ctx.textBaseline = "top";
+    for (const line of titleLines) {
+      ctx.fillText(line, pad, y);
+      y += 26;
+    }
+    if (hintLines.length) {
+      y += 8;
+      ctx.fillStyle = C.muted;
+      ctx.font = '400 13px "IBM Plex Sans", "Segoe UI", sans-serif';
+      for (const line of hintLines) {
+        ctx.fillText(line, pad, y);
+        y += 18;
+      }
+    }
+    y += 16;
+    ctx.drawImage(img, pad, y, svgW, svgH);
+    y += svgH;
+    if (footerLines.length) {
+      y += 16;
+      ctx.fillStyle = C.muted;
+      ctx.font = '400 11px "IBM Plex Sans", "Segoe UI", sans-serif';
+      for (const line of footerLines) {
+        ctx.fillText(line, pad, y);
+        y += 16;
+      }
+    }
+
+    return await canvasToBlob(canvas);
+  } finally {
+    URL.revokeObjectURL(url);
+  }
+}
+
+function downloadBlob(blob, name) {
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = name;
+  a.click();
+  URL.revokeObjectURL(a.href);
+}
+
+async function downloadChartPng(panel, btn) {
+  if (!panel.querySelector(".chart svg")) {
+    flashButton(btn, "Empty");
+    return;
+  }
+  const original = btn.getAttribute("data-original-label") || btn.textContent;
+  btn.setAttribute("data-original-label", original);
+  btn.disabled = true;
+  btn.textContent = "…";
+  try {
+    const blob = await chartToPngBlob(panel);
+    downloadBlob(blob, chartFilename(panel));
+    flashButton(btn, "Saved");
+  } catch (err) {
+    console.error(err);
+    flashButton(btn, "Failed");
+  }
+}
+
+function copyChartPng(panel, btn) {
+  if (!panel.querySelector(".chart svg")) {
+    flashButton(btn, "Empty");
+    return;
+  }
+  if (!navigator.clipboard || typeof ClipboardItem === "undefined") {
+    flashButton(btn, "Unavailable");
+    return;
+  }
+
+  const original = btn.getAttribute("data-original-label") || btn.textContent;
+  btn.setAttribute("data-original-label", original);
+  btn.disabled = true;
+  btn.textContent = "…";
+
+  const blobPromise = chartToPngBlob(panel);
+  const fail = (err) => {
+    console.error(err || "Could not copy chart");
+    flashButton(btn, "Failed");
+  };
+  const writeBlob = (blob) => navigator.clipboard.write([new ClipboardItem({ "image/png": blob })]);
+
+  try {
+    navigator.clipboard
+      .write([new ClipboardItem({ "image/png": blobPromise })])
+      .then(() => flashButton(btn, "Copied"))
+      .catch(() => blobPromise.then(writeBlob).then(() => flashButton(btn, "Copied")).catch(fail));
+  } catch {
+    blobPromise.then(writeBlob).then(() => flashButton(btn, "Copied")).catch(fail);
+  }
 }
 
 init();
