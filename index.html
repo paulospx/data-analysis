@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Paid Circulation — Digital vs Print</title>
+  <meta name="description" content="Analysis workspace for paid digital and print circulation by publication, type, and quarter." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to analysis</a>
+
+  <header class="masthead">
+    <div class="masthead__brand">
+      <p class="kicker">Circulation analysis</p>
+      <h1>Paid digital vs print</h1>
+      <p class="lede" id="source-line">Loading publications…</p>
+    </div>
+    <div class="masthead__tools">
+      <label class="search">
+        <span class="visually-hidden">Search publications</span>
+        <input id="search" type="search" placeholder="Search a title" autocomplete="off" />
+      </label>
+      <button type="button" class="btn ghost" id="btn-guide" aria-expanded="false" aria-controls="guide">
+        How to read this
+      </button>
+    </div>
+  </header>
+
+  <section class="guide" id="guide" hidden>
+    <div class="guide__inner">
+      <h2>What this workspace is for</h2>
+      <p>
+        The file lists <strong>paid circulation</strong> — average paid copies per issue, not unique subscribers.
+        Digital and print are separate channels. A daily newspaper and a monthly magazine are not time-equivalent;
+        keep that in mind when you sum across titles, or switch on frequency weighting.
+      </p>
+      <div class="guide__grid">
+        <article>
+          <h3>Statistical charts</h3>
+          <ul>
+            <li><strong>Stacked quarter bars</strong> — market level, so you can see whether digital is substituting print or sitting beside it.</li>
+            <li><strong>Ranking bars</strong> — comparison of titles on a shared scale (the primary analytical task).</li>
+            <li><strong>Log scatter</strong> — print vs digital. Log scale is required: titles range from hundreds to ~100k copies.</li>
+            <li><strong>Beeswarm of digital share</strong> — the distribution, not just the average. Averages hide print-only clusters.</li>
+            <li><strong>Slope chart Q1→Q4</strong> — two-period change without the clutter of four-point lines.</li>
+            <li><strong>Diverging change bars</strong> — signed percent change, ranked by magnitude.</li>
+            <li><strong>Waterfall</strong> — which titles moved the market total between two quarters.</li>
+            <li><strong>Sparklines in the table</strong> — lookup plus trend in the same row (details on demand).</li>
+          </ul>
+        </article>
+        <article>
+          <h3>Interaction (NN/g)</h3>
+          <ul>
+            <li><strong>Overview, filter, then details</strong> — KPIs first, then charts, then the table.</li>
+            <li><strong>Filters stay visible</strong> — you should never have to remember what is applied.</li>
+            <li><strong>Non-reporting titles are off by default</strong> — zeros are often missing filings, not true zero circulation.</li>
+            <li><strong>Irregular titles</strong> (quarterly, bimonthly) are averaged only over quarters that report copies.</li>
+            <li><strong>Click a title</strong> to pin it. Pins follow you across views.</li>
+            <li><strong>Color</strong> is reserved for meaning: blue = digital, terracotta = print, green/red = change.</li>
+            <li><strong>Chart titles state the finding</strong>, not the chart type. They update with your filters.</li>
+          </ul>
+        </article>
+      </div>
+      <p class="guide__foot">Keyboard: <kbd>/</kbd> search · <kbd>1</kbd>–<kbd>6</kbd> views · <kbd>Esc</kbd> close this panel</p>
+    </div>
+  </section>
+
+  <div class="filters" id="filters">
+    <div class="filters__row">
+      <fieldset class="chipset">
+        <legend>Type</legend>
+        <label class="chip"><input type="checkbox" name="type" value="Jornal" checked /> Newspaper</label>
+        <label class="chip"><input type="checkbox" name="type" value="Revista" checked /> Magazine</label>
+      </fieldset>
+
+      <fieldset class="chipset chipset--wrap">
+        <legend>Periodicity</legend>
+        <div id="periodicity-chips"></div>
+      </fieldset>
+    </div>
+
+    <div class="filters__row">
+      <fieldset class="chipset">
+        <legend>Reporting</legend>
+        <label class="chip"><input type="radio" name="reporting" value="reporting" checked /> Reporting titles</label>
+        <label class="chip"><input type="radio" name="reporting" value="digital" /> Has digital</label>
+        <label class="chip"><input type="radio" name="reporting" value="print-only" /> Print only</label>
+        <label class="chip"><input type="radio" name="reporting" value="all" /> Include zeros</label>
+      </fieldset>
+
+      <fieldset class="chipset">
+        <legend>Measure</legend>
+        <label class="chip"><input type="radio" name="quarter" value="avg" checked /> Active-quarter average</label>
+        <label class="chip"><input type="radio" name="quarter" value="Q1" /> Q1</label>
+        <label class="chip"><input type="radio" name="quarter" value="Q2" /> Q2</label>
+        <label class="chip"><input type="radio" name="quarter" value="Q3" /> Q3</label>
+        <label class="chip"><input type="radio" name="quarter" value="Q4" /> Q4</label>
+      </fieldset>
+
+      <label class="switch">
+        <input type="checkbox" id="weighted" />
+        <span>Weight by issues per quarter</span>
+      </label>
+
+      <button type="button" class="btn text" id="btn-reset">Reset filters</button>
+    </div>
+
+    <p class="status-line" id="status-line" aria-live="polite"></p>
+  </div>
+
+  <nav class="views" aria-label="Analysis views">
+    <button type="button" class="view-tab is-active" data-view="overview">Overview</button>
+    <button type="button" class="view-tab" data-view="rankings">Rankings</button>
+    <button type="button" class="view-tab" data-view="mix">Digital mix</button>
+    <button type="button" class="view-tab" data-view="change">Change</button>
+    <button type="button" class="view-tab" data-view="compare">Compare</button>
+    <button type="button" class="view-tab" data-view="table">Table</button>
+  </nav>
+
+  <div class="pins" id="pins" hidden></div>
+
+  <main id="main">
+    <section class="view" id="view-overview">
+      <article class="report" id="report" aria-labelledby="report-title">
+        <header class="report__head">
+          <p class="kicker">Briefing from the file</p>
+          <h2 id="report-title">Loading briefing…</h2>
+          <p class="hint">Computed from data.json once the file loads.</p>
+        </header>
+      </article>
+
+      <div class="kpis" id="kpis"></div>
+      <div class="grid-2">
+        <figure class="panel">
+          <figcaption>
+            <h2 id="title-market">Paid circulation by quarter</h2>
+            <p class="hint" id="hint-market">Stacked copies. Hover a segment for the exact figure.</p>
+          </figcaption>
+          <div class="chart" id="chart-market"></div>
+        </figure>
+        <figure class="panel">
+          <figcaption>
+            <h2>What the filters are saying</h2>
+            <p class="hint">Findings recalculate from the current set, not the full file.</p>
+          </figcaption>
+          <ol class="insights" id="insights"></ol>
+        </figure>
+      </div>
+      <div class="grid-2">
+        <figure class="panel">
+          <figcaption>
+            <h2 id="title-type">Format mix by type</h2>
+            <p class="hint">100% stacked. Compare digital penetration, not raw size.</p>
+          </figcaption>
+          <div class="chart chart--short" id="chart-type"></div>
+        </figure>
+        <figure class="panel">
+          <figcaption>
+            <h2 id="title-periodicity">Format mix by periodicity</h2>
+            <p class="hint">Same 100% scale, so dailies and monthlies are comparable.</p>
+          </figcaption>
+          <div class="chart" id="chart-periodicity"></div>
+        </figure>
+      </div>
+    </section>
+
+    <section class="view" id="view-rankings" hidden>
+      <div class="toolbar">
+        <fieldset class="chipset">
+          <legend>Rank by</legend>
+          <label class="chip"><input type="radio" name="rank-metric" value="total" checked /> Total</label>
+          <label class="chip"><input type="radio" name="rank-metric" value="digital" /> Digital</label>
+          <label class="chip"><input type="radio" name="rank-metric" value="print" /> Print</label>
+          <label class="chip"><input type="radio" name="rank-metric" value="share" /> Digital share</label>
+        </fieldset>
+        <label class="range">
+          Top
+          <input type="range" id="rank-n" min="8" max="40" step="1" value="15" />
+          <strong id="rank-n-label">15</strong>
+        </label>
+      </div>
+      <figure class="panel">
+        <figcaption>
+          <h2 id="title-rank">Largest titles by paid circulation</h2>
+          <p class="hint">Shared horizontal scale. Click a bar to pin the title for comparison.</p>
+        </figcaption>
+        <div class="chart chart--tall" id="chart-rank"></div>
+      </figure>
+    </section>
+
+    <section class="view" id="view-mix" hidden>
+      <div class="toolbar">
+        <label class="switch">
+          <input type="checkbox" id="log-scale" checked />
+          <span>Log scales (recommended)</span>
+        </label>
+      </div>
+      <div class="grid-2">
+        <figure class="panel">
+          <figcaption>
+            <h2 id="title-scatter">Print vs digital, one dot per title</h2>
+            <p class="hint">The dashed line is equal digital and print. Print-only titles sit on the floor.</p>
+          </figcaption>
+          <div class="chart chart--square" id="chart-scatter"></div>
+        </figure>
+        <figure class="panel">
+          <figcaption>
+            <h2 id="title-share">How digital share is distributed</h2>
+            <p class="hint">Each tick is a title. The diamond is the circulation-weighted share.</p>
+          </figcaption>
+          <div class="chart chart--square" id="chart-beeswarm"></div>
+        </figure>
+      </div>
+      <figure class="panel">
+        <figcaption>
+          <h2>Digital leaders</h2>
+          <p class="hint">Share of all digital copies in the current filter set.</p>
+        </figcaption>
+        <div id="digital-leaders"></div>
+      </figure>
+    </section>
+
+    <section class="view" id="view-change" hidden>
+      <div class="toolbar">
+        <label class="select">
+          From
+          <select id="from-q">
+            <option>Q1</option>
+            <option>Q2</option>
+            <option>Q3</option>
+            <option>Q4</option>
+          </select>
+        </label>
+        <label class="select">
+          To
+          <select id="to-q">
+            <option>Q1</option>
+            <option>Q2</option>
+            <option>Q3</option>
+            <option selected>Q4</option>
+          </select>
+        </label>
+        <p class="hint tight">Only titles that report copies in both quarters are compared. That avoids treating a missing filing as a collapse.</p>
+      </div>
+      <div class="grid-2">
+        <figure class="panel">
+          <figcaption>
+            <h2 id="title-slope">Who moved between the two quarters</h2>
+            <p class="hint">Slope chart of total paid circulation. Green rose, red fell.</p>
+          </figcaption>
+          <div class="chart chart--tall" id="chart-slope"></div>
+        </figure>
+        <figure class="panel">
+          <figcaption>
+            <h2 id="title-diverge">Percent change, ranked</h2>
+            <p class="hint">Relative change. Small titles can move more in percent than market leaders.</p>
+          </figcaption>
+          <div class="chart chart--tall" id="chart-diverge"></div>
+        </figure>
+      </div>
+      <figure class="panel">
+        <figcaption>
+          <h2 id="title-water">What moved the market total</h2>
+          <p class="hint">Waterfall of absolute change. Remaining titles are grouped as Other.</p>
+        </figcaption>
+        <div class="chart" id="chart-water"></div>
+      </figure>
+    </section>
+
+    <section class="view" id="view-compare" hidden>
+      <div class="toolbar">
+        <label class="search search--wide">
+          <span class="visually-hidden">Add a title to compare</span>
+          <input id="compare-search" type="search" placeholder="Add a title to the comparison" list="title-list" />
+        </label>
+        <datalist id="title-list"></datalist>
+        <button type="button" class="btn ghost" id="btn-clear-pins">Clear pins</button>
+      </div>
+      <p class="hint" id="compare-empty">Pin titles from any chart, or type a name above. Up to six titles.</p>
+      <div class="compare-grid" id="compare-grid"></div>
+    </section>
+
+    <section class="view" id="view-table" hidden>
+      <div class="toolbar">
+        <button type="button" class="btn ghost" id="btn-export">Export CSV</button>
+        <p class="hint tight">Sparklines use the four quarters. Dashes mean the title did not report copies that quarter.</p>
+      </div>
+      <div class="table-wrap">
+        <table class="data-table" id="data-table">
+          <thead>
+            <tr>
+              <th data-sort="name">Publication</th>
+              <th data-sort="type">Type</th>
+              <th data-sort="periodicity">Periodicity</th>
+              <th data-sort="quarters">Quarters</th>
+              <th data-sort="digital" class="num">Digital</th>
+              <th data-sort="print" class="num">Print</th>
+              <th data-sort="total" class="num">Total</th>
+              <th data-sort="share" class="num">Digital %</th>
+              <th>Q1–Q4</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="tooltip" id="tooltip" role="tooltip" hidden></div>
+
+  <footer class="colophon">
+    <p>
+      Unit: average paid copies per issue.
+      Digital = circulação digital paga · Print = circulação impressa paga.
+      Frequency weighting uses 78 daily, 13 weekly, 6.5 fortnightly, 3 monthly issues per quarter.
+    </p>
+  </footer>
+
+  <noscript>
+    <p class="status-line" style="width:min(1240px, calc(100% - 2rem)); margin: 1rem auto;">
+      This page loads <code>data.json</code> with JavaScript. Enable JavaScript and open the folder through a local HTTP server.
+    </p>
+  </noscript>
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>

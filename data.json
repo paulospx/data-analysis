@@ -1,0 +1,1922 @@
+{
+  "source": "export.xls",
+  "label": "Paid circulation · four quarters",
+  "unit": "Average paid copies per issue in the quarter",
+  "quarters": [
+    "Q1",
+    "Q2",
+    "Q3",
+    "Q4"
+  ],
+  "publications": [
+    {
+      "name": "A Nossa Gravidez",
+      "type": "Revista",
+      "periodicity": "Quadrimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Across - Luxury Travel & Safaris",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 10223
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 10581
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 10679
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 10283
+        }
+      }
+    },
+    {
+      "name": "Activa",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 448,
+          "print": 23867
+        },
+        "Q2": {
+          "digital": 279,
+          "print": 21984
+        },
+        "Q3": {
+          "digital": 230,
+          "print": 25751
+        },
+        "Q4": {
+          "digital": 187,
+          "print": 18895
+        }
+      }
+    },
+    {
+      "name": "Altagama Motor",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 3157
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 2787
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 2794
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Ana",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 17,
+          "print": 16374
+        },
+        "Q2": {
+          "digital": 17,
+          "print": 15332
+        },
+        "Q3": {
+          "digital": 3,
+          "print": 17770
+        },
+        "Q4": {
+          "digital": 2,
+          "print": 12807
+        }
+      }
+    },
+    {
+      "name": "Attitude",
+      "type": "Revista",
+      "periodicity": "Bimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 420,
+          "print": 3875
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 700,
+          "print": 3602
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Autofoco",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 7046
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 5860
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 5891
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 5597
+        }
+      }
+    },
+    {
+      "name": "Automotive",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 150
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 150
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 150
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 150
+        }
+      }
+    },
+    {
+      "name": "Blitz",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Boletim da Ordem dos Advogados",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Caras",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 252,
+          "print": 27286
+        },
+        "Q2": {
+          "digital": 201,
+          "print": 29077
+        },
+        "Q3": {
+          "digital": 193,
+          "print": 32075
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 24512
+        }
+      }
+    },
+    {
+      "name": "Caras Decoração",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 278,
+          "print": 12887
+        },
+        "Q2": {
+          "digital": 154,
+          "print": 12378
+        },
+        "Q3": {
+          "digital": 121,
+          "print": 11507
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 10581
+        }
+      }
+    },
+    {
+      "name": "Carros & Motores",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 20310
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 20538
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 22466
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 20294
+        }
+      }
+    },
+    {
+      "name": "Continente Magazine",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 100896
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 104322
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 95910
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 82849
+        }
+      }
+    },
+    {
+      "name": "Correio da Manhã",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 1279,
+          "print": 81426
+        },
+        "Q2": {
+          "digital": 1370,
+          "print": 79783
+        },
+        "Q3": {
+          "digital": 1475,
+          "print": 83898
+        },
+        "Q4": {
+          "digital": 1559,
+          "print": 76175
+        }
+      }
+    },
+    {
+      "name": "Courrier Internacional",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 1034,
+          "print": 13833
+        },
+        "Q2": {
+          "digital": 849,
+          "print": 11681
+        },
+        "Q3": {
+          "digital": 756,
+          "print": 11473
+        },
+        "Q4": {
+          "digital": 642,
+          "print": 11131
+        }
+      }
+    },
+    {
+      "name": "Diário de Aveiro",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 42,
+          "print": 3879
+        },
+        "Q2": {
+          "digital": 33,
+          "print": 3855
+        },
+        "Q3": {
+          "digital": 31,
+          "print": 3802
+        },
+        "Q4": {
+          "digital": 40,
+          "print": 3831
+        }
+      }
+    },
+    {
+      "name": "Diário de Coimbra",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 49,
+          "print": 6671
+        },
+        "Q2": {
+          "digital": 50,
+          "print": 6740
+        },
+        "Q3": {
+          "digital": 51,
+          "print": 6842
+        },
+        "Q4": {
+          "digital": 55,
+          "print": 6724
+        }
+      }
+    },
+    {
+      "name": "Diário de Notícias",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 3962,
+          "print": 8560
+        },
+        "Q2": {
+          "digital": 3033,
+          "print": 8299
+        },
+        "Q3": {
+          "digital": 1003,
+          "print": 8972
+        },
+        "Q4": {
+          "digital": 1062,
+          "print": 6603
+        }
+      }
+    },
+    {
+      "name": "Diário de Notícias da Madeira",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 1342,
+          "print": 8123
+        },
+        "Q2": {
+          "digital": 1277,
+          "print": 7991
+        },
+        "Q3": {
+          "digital": 1273,
+          "print": 7831
+        },
+        "Q4": {
+          "digital": 1247,
+          "print": 7497
+        }
+      }
+    },
+    {
+      "name": "Diário do Sul",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 16,
+          "print": 3114
+        },
+        "Q2": {
+          "digital": 14,
+          "print": 3120
+        },
+        "Q3": {
+          "digital": 18,
+          "print": 3120
+        },
+        "Q4": {
+          "digital": 19,
+          "print": 3120
+        }
+      }
+    },
+    {
+      "name": "Elle",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 505,
+          "print": 21452
+        },
+        "Q2": {
+          "digital": 654,
+          "print": 21648
+        },
+        "Q3": {
+          "digital": 616,
+          "print": 22392
+        },
+        "Q4": {
+          "digital": 547,
+          "print": 19851
+        }
+      }
+    },
+    {
+      "name": "Estrela Guia",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 818
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 1600
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Exame",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 1765,
+          "print": 10886
+        },
+        "Q2": {
+          "digital": 833,
+          "print": 9117
+        },
+        "Q3": {
+          "digital": 791,
+          "print": 7538
+        },
+        "Q4": {
+          "digital": 683,
+          "print": 8600
+        }
+      }
+    },
+    {
+      "name": "Exame Informática",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 6089,
+          "print": 12698
+        },
+        "Q2": {
+          "digital": 5121,
+          "print": 11793
+        },
+        "Q3": {
+          "digital": 2704,
+          "print": 11488
+        },
+        "Q4": {
+          "digital": 1777,
+          "print": 10743
+        }
+      }
+    },
+    {
+      "name": "Executive Digest",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 11807
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 11629
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 11821
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 11717
+        }
+      }
+    },
+    {
+      "name": "Expresso",
+      "type": "Jornal",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 25009,
+          "print": 61951
+        },
+        "Q2": {
+          "digital": 24070,
+          "print": 61173
+        },
+        "Q3": {
+          "digital": 25131,
+          "print": 61029
+        },
+        "Q4": {
+          "digital": 26144,
+          "print": 59712
+        }
+      }
+    },
+    {
+      "name": "Ficticia_160",
+      "type": "Revista",
+      "periodicity": "Trimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Gadget & PC",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 5668
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 5150
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 6048
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 5378
+        }
+      }
+    },
+    {
+      "name": "Happy Kids",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Happy Woman",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 46842
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 45802
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 48198
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 43546
+        }
+      }
+    },
+    {
+      "name": "IT CHANNEL",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Jornal da Bairrada",
+      "type": "Jornal",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 40,
+          "print": 5659
+        },
+        "Q2": {
+          "digital": 31,
+          "print": 5560
+        },
+        "Q3": {
+          "digital": 54,
+          "print": 5480
+        },
+        "Q4": {
+          "digital": 52,
+          "print": 5460
+        }
+      }
+    },
+    {
+      "name": "Jornal das Oficinas",
+      "type": "Jornal",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Jornal de Letras, Artes & Ideias",
+      "type": "Jornal",
+      "periodicity": "Quinzenal",
+      "quarters": {
+        "Q1": {
+          "digital": 466,
+          "print": 6213
+        },
+        "Q2": {
+          "digital": 418,
+          "print": 5967
+        },
+        "Q3": {
+          "digital": 428,
+          "print": 5775
+        },
+        "Q4": {
+          "digital": 432,
+          "print": 5938
+        }
+      }
+    },
+    {
+      "name": "Jornal de Negócios",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 4629,
+          "print": 4610
+        },
+        "Q2": {
+          "digital": 4745,
+          "print": 4655
+        },
+        "Q3": {
+          "digital": 4804,
+          "print": 4240
+        },
+        "Q4": {
+          "digital": 6457,
+          "print": 4393
+        }
+      }
+    },
+    {
+      "name": "Jornal de Notícias",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 6361,
+          "print": 42945
+        },
+        "Q2": {
+          "digital": 6031,
+          "print": 42307
+        },
+        "Q3": {
+          "digital": 4244,
+          "print": 43409
+        },
+        "Q4": {
+          "digital": 4337,
+          "print": 41725
+        }
+      }
+    },
+    {
+      "name": "Jornal Destak",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Jornal do Fundão",
+      "type": "Jornal",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 143,
+          "print": 7353
+        },
+        "Q2": {
+          "digital": 137,
+          "print": 7220
+        },
+        "Q3": {
+          "digital": 155,
+          "print": 7166
+        },
+        "Q4": {
+          "digital": 108,
+          "print": 7096
+        }
+      }
+    },
+    {
+      "name": "Lux",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 283,
+          "print": 21707
+        },
+        "Q2": {
+          "digital": 314,
+          "print": 22194
+        },
+        "Q3": {
+          "digital": 363,
+          "print": 26455
+        },
+        "Q4": {
+          "digital": 1133,
+          "print": 20412
+        }
+      }
+    },
+    {
+      "name": "Lux Woman",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 6,
+          "print": 14940
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 16654
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 19346
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 15529
+        }
+      }
+    },
+    {
+      "name": "Mais - Faz Bem à Saúde",
+      "type": "Revista",
+      "periodicity": "Trimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Maria",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 108,
+          "print": 105351
+        },
+        "Q2": {
+          "digital": 93,
+          "print": 101037
+        },
+        "Q3": {
+          "digital": 5,
+          "print": 107340
+        },
+        "Q4": {
+          "digital": 5,
+          "print": 90020
+        }
+      }
+    },
+    {
+      "name": "Marketeer",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 13821
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 13737
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 13912
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 13935
+        }
+      }
+    },
+    {
+      "name": "Máxima",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 1039,
+          "print": 27842
+        },
+        "Q2": {
+          "digital": 1023,
+          "print": 28881
+        },
+        "Q3": {
+          "digital": 1061,
+          "print": 28012
+        },
+        "Q4": {
+          "digital": 1051,
+          "print": 22826
+        }
+      }
+    },
+    {
+      "name": "Meios & Publicidade",
+      "type": "Jornal",
+      "periodicity": "Quinzenal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Men's Health",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 337,
+          "print": 9627
+        },
+        "Q2": {
+          "digital": 550,
+          "print": 7918
+        },
+        "Q3": {
+          "digital": 695,
+          "print": 9179
+        },
+        "Q4": {
+          "digital": 794,
+          "print": 7231
+        }
+      }
+    },
+    {
+      "name": "National Geographic Portugal",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 800,
+          "print": 19399
+        },
+        "Q2": {
+          "digital": 1047,
+          "print": 19775
+        },
+        "Q3": {
+          "digital": 1160,
+          "print": 19501
+        },
+        "Q4": {
+          "digital": 1122,
+          "print": 18404
+        }
+      }
+    },
+    {
+      "name": "Nova Gente",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 20,
+          "print": 58917
+        },
+        "Q2": {
+          "digital": 22,
+          "print": 58153
+        },
+        "Q3": {
+          "digital": 2,
+          "print": 68646
+        },
+        "Q4": {
+          "digital": 1,
+          "print": 57600
+        }
+      }
+    },
+    {
+      "name": "O Jogo",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 2521,
+          "print": 15126
+        },
+        "Q2": {
+          "digital": 2577,
+          "print": 15473
+        },
+        "Q3": {
+          "digital": 2470,
+          "print": 16607
+        },
+        "Q4": {
+          "digital": 2559,
+          "print": 14614
+        }
+      }
+    },
+    {
+      "name": "O Jornal Económico",
+      "type": "Jornal",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 1886,
+          "print": 1186
+        },
+        "Q2": {
+          "digital": 2061,
+          "print": 1101
+        },
+        "Q3": {
+          "digital": 3033,
+          "print": 1331
+        },
+        "Q4": {
+          "digital": 2995,
+          "print": 1428
+        }
+      }
+    },
+    {
+      "name": "O JornalDentistry",
+      "type": "Jornal",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "O Nosso Bébé",
+      "type": "Revista",
+      "periodicity": "Anual",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "pH + informação com a sua farmácia",
+      "type": "Revista",
+      "periodicity": "Bimensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "PREVENIR",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 22728
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 22383
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 25121
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 21193
+        }
+      }
+    },
+    {
+      "name": "Público",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 11579,
+          "print": 17405
+        },
+        "Q2": {
+          "digital": 12312,
+          "print": 17065
+        },
+        "Q3": {
+          "digital": 12663,
+          "print": 18678
+        },
+        "Q4": {
+          "digital": 13080,
+          "print": 17572
+        }
+      }
+    },
+    {
+      "name": "Record",
+      "type": "Jornal",
+      "periodicity": "Diário",
+      "quarters": {
+        "Q1": {
+          "digital": 2002,
+          "print": 30807
+        },
+        "Q2": {
+          "digital": 2058,
+          "print": 29336
+        },
+        "Q3": {
+          "digital": 2157,
+          "print": 33598
+        },
+        "Q4": {
+          "digital": 2039,
+          "print": 28630
+        }
+      }
+    },
+    {
+      "name": "Região de Leiria",
+      "type": "Jornal",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 383,
+          "print": 5326
+        },
+        "Q2": {
+          "digital": 325,
+          "print": 5039
+        },
+        "Q3": {
+          "digital": 335,
+          "print": 5187
+        },
+        "Q4": {
+          "digital": 347,
+          "print": 5775
+        }
+      }
+    },
+    {
+      "name": "Revista Cristina",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 911,
+          "print": 41434
+        },
+        "Q2": {
+          "digital": 1121,
+          "print": 35819
+        },
+        "Q3": {
+          "digital": 1579,
+          "print": 56637
+        },
+        "Q4": {
+          "digital": 1398,
+          "print": 23263
+        }
+      }
+    },
+    {
+      "name": "Revista Ler",
+      "type": "Revista",
+      "periodicity": "Trimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 3983
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 4305
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 4003
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Revista Montepio",
+      "type": "Revista",
+      "periodicity": "Trimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Sábado",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 2025,
+          "print": 37937
+        },
+        "Q2": {
+          "digital": 2186,
+          "print": 38007
+        },
+        "Q3": {
+          "digital": 2020,
+          "print": 40929
+        },
+        "Q4": {
+          "digital": 1967,
+          "print": 35370
+        }
+      }
+    },
+    {
+      "name": "SaberViver",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 23304
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 23741
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 23537
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 21921
+        }
+      }
+    },
+    {
+      "name": "Selecções do Reader's Digest",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 29754
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 31215
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 29164
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 27849
+        }
+      }
+    },
+    {
+      "name": "Telenovelas",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 40172
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 37534
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 39893
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 33766
+        }
+      }
+    },
+    {
+      "name": "Tempo Livre",
+      "type": "Jornal",
+      "periodicity": "Bimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "teste t_insight",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 71,
+          "print": 407
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "The Portugal News",
+      "type": "Jornal",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 656
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 599
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 561
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 544
+        }
+      }
+    },
+    {
+      "name": "Ticketline Magazine",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 1
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 1
+        }
+      }
+    },
+    {
+      "name": "Top Gear",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 6778
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 6499
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 6234
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    },
+    {
+      "name": "Turbo",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 8442
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 9045
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 8190
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 7846
+        }
+      }
+    },
+    {
+      "name": "Tv 7 Dias",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 23,
+          "print": 73431
+        },
+        "Q2": {
+          "digital": 23,
+          "print": 72791
+        },
+        "Q3": {
+          "digital": 4,
+          "print": 81755
+        },
+        "Q4": {
+          "digital": 3,
+          "print": 69977
+        }
+      }
+    },
+    {
+      "name": "Tv Guia",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 958,
+          "print": 38643
+        },
+        "Q2": {
+          "digital": 960,
+          "print": 49699
+        },
+        "Q3": {
+          "digital": 1022,
+          "print": 53542
+        },
+        "Q4": {
+          "digital": 1022,
+          "print": 42839
+        }
+      }
+    },
+    {
+      "name": "Tv Mais",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 23,
+          "print": 29712
+        },
+        "Q2": {
+          "digital": 52,
+          "print": 30851
+        },
+        "Q3": {
+          "digital": 23,
+          "print": 34954
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 31701
+        }
+      }
+    },
+    {
+      "name": "Vida Económica",
+      "type": "Jornal",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 4108
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 4062
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 3835
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 4229
+        }
+      }
+    },
+    {
+      "name": "Vip",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 10,
+          "print": 17560
+        },
+        "Q2": {
+          "digital": 13,
+          "print": 20039
+        },
+        "Q3": {
+          "digital": 4,
+          "print": 26278
+        },
+        "Q4": {
+          "digital": 4,
+          "print": 17167
+        }
+      }
+    },
+    {
+      "name": "Visão",
+      "type": "Revista",
+      "periodicity": "Semanal",
+      "quarters": {
+        "Q1": {
+          "digital": 2154,
+          "print": 40428
+        },
+        "Q2": {
+          "digital": 1383,
+          "print": 40159
+        },
+        "Q3": {
+          "digital": 1218,
+          "print": 43297
+        },
+        "Q4": {
+          "digital": 1020,
+          "print": 37157
+        }
+      }
+    },
+    {
+      "name": "Visão História",
+      "type": "Revista",
+      "periodicity": "Bimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 634,
+          "print": 19504
+        },
+        "Q2": {
+          "digital": 414,
+          "print": 19563
+        },
+        "Q3": {
+          "digital": 377,
+          "print": 20928
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 19306
+        }
+      }
+    },
+    {
+      "name": "Visão Júnior",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 653,
+          "print": 10941
+        },
+        "Q2": {
+          "digital": 442,
+          "print": 10366
+        },
+        "Q3": {
+          "digital": 258,
+          "print": 10358
+        },
+        "Q4": {
+          "digital": 177,
+          "print": 9259
+        }
+      }
+    },
+    {
+      "name": "Visão Saúde",
+      "type": "Revista",
+      "periodicity": "Bimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 9402
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 12603
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 14267
+        }
+      }
+    },
+    {
+      "name": "Volta ao Mundo",
+      "type": "Revista",
+      "periodicity": "Mensal",
+      "quarters": {
+        "Q1": {
+          "digital": 2481,
+          "print": 6913
+        },
+        "Q2": {
+          "digital": 2487,
+          "print": 6352
+        },
+        "Q3": {
+          "digital": 2270,
+          "print": 6027
+        },
+        "Q4": {
+          "digital": 2498,
+          "print": 5815
+        }
+      }
+    },
+    {
+      "name": "Women's Health",
+      "type": "Revista",
+      "periodicity": "Trimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 45,
+          "print": 7734
+        },
+        "Q3": {
+          "digital": 51,
+          "print": 12701
+        },
+        "Q4": {
+          "digital": 132,
+          "print": 8496
+        }
+      }
+    },
+    {
+      "name": "YAMMI",
+      "type": "Revista",
+      "periodicity": "Trimestral",
+      "quarters": {
+        "Q1": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q2": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q3": {
+          "digital": 0,
+          "print": 0
+        },
+        "Q4": {
+          "digital": 0,
+          "print": 0
+        }
+      }
+    }
+  ]
+}
